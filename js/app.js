@@ -1,19 +1,21 @@
 (function() {
-    
-    console.log('Starting MultiMath with an IIFE');
-    
-    // add click handler to the start game button
-    document.getElementById('startGame').addEventListener('click', function() {
-        player.setName(document.getElementById('playername').value);
-        game.printGame();
-    });
-    
-    // add click handler to the calculate score button
-    document.getElementById('calculate').addEventListener('click', function() {
-        game.calculateScore();
-    });
-    
-    // set the default number of problems
-    document.getElementById('problemCount').value = game.getProblemCount();
-    
+  console.log("Starting app");
+
+  startGameButton = document.querySelector("#startGame");
+  calculateButton = document.querySelector("#calculate");
+  problemCountInput = document.querySelector("#problemCount");
+  playernameInput = document.querySelector("#playername");
+
+  function handleStartGame() {
+    player.setName(playernameInput.value);
+    game.printGame();
+  }
+
+  function handleCalculation() {
+    game.calculateScore();
+  }
+
+  startGameButton.addEventListener("click", handleStartGame);
+  calculateButton.addEventListener("click", handleCalculation);
+  problemCountInput.value = game.getProblemCount();
 })();
