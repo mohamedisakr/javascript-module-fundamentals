@@ -1,0 +1,23 @@
+{
+  "name": "javascript-module-fundamentals",
+  "version": "1.0.0",
+  "description": "1. Structuring JavaScript Code\r 2. Practical Design Patterns in JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohamedisakr/javascript-module-fundamentals.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohamedisakr/javascript-module-fundamentals/issues"
+  },
+  "homepage": "https://github.com/mohamedisakr/javascript-module-fundamentals#readme",
+  "dependencies": {
+    "systemjs": "^6.2.6"
+  }
+}
