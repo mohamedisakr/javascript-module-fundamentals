@@ -1,26 +1,30 @@
-// **************************** Using the CommonJS Format with SystemJS ********************
-const player = require("./player.js");
-const game = require("./game.js");
+// **************************** Using ES6 Modules ********************
+import assignPlayerName from "./player.js";
+import { printGame, calculateScore, getProblemCount } from "./game.js";
 
-console.log("Loading with SystemJS");
+function handleDOMContentLoaded() {
+  console.log("Built with webpack");
 
-startGameButton = document.querySelector("#startGame");
-calculateButton = document.querySelector("#calculate");
-problemCountInput = document.querySelector("#problemCount");
-playernameInput = document.querySelector("#playername");
+  calculateButton = document.querySelector("#calculate");
+  startGameButton = document.querySelector("#startGame");
+  problemCountInput = document.querySelector("#problemCount");
+  playernameInput = document.querySelector("#playername");
 
-function handleStartGame() {
-  player.setName(playernameInput.value);
-  game.printGame();
+  function handleStartGame() {
+    assignPlayerName(playernameInput.value);
+    printGame();
+  }
+
+  function handleCalculation() {
+    calculateScore();
+  }
+
+  startGameButton.addEventListener("click", handleStartGame);
+  calculateButton.addEventListener("click", handleCalculation);
+  problemCountInput.value = getProblemCount();
 }
 
-function handleCalculation() {
-  game.calculateScore();
-}
-
-startGameButton.addEventListener("click", handleStartGame);
-calculateButton.addEventListener("click", handleCalculation);
-problemCountInput.value = game.getProblemCount();
+document.addEventListener("DOMContentLoaded", handleDOMContentLoaded);
 
 // **************************** Using the AMD Format with RequireJS ********************
 /*

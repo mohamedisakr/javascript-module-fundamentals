@@ -1,4 +1,22 @@
+// **************************** Using ES6 Modules ********************
+let playerName = "";
+
+export function logPlayer() {
+  console.log(`The current player is ${playerName}.`);
+}
+
+export default function setName(newName) {
+  playerName = newName;
+}
+
+export function getName() {
+  return playerName;
+}
+
+// export { logPlayer, setName, getName };
+
 // **************************** Using the CommonJS Format with SystemJS ********************
+/*
 let playerName = "";
 
 function logPlayer() {
@@ -16,6 +34,7 @@ function getName() {
 exports.logPlayer = logPlayer;
 exports.setName = setName;
 exports.getName = getName;
+*/
 
 // **************************** Using the AMD Format with RequireJS ********************
 /*
